@@ -8,16 +8,30 @@
   <title>Dolar</title>
 </head>
 <body>
+  <input type="hidden" id="value" value=<%= value %> >
   <div class="container">
       <div class="box">
         <p>Reais</p>
-        <input type="number" id="num1" value="1">
+        <input type="number" id="num1" value="1" oninput="valdolar()">
         <p>Dolar</p>
-        <input type="number" id="num2" value=<%= value %>>
+        <input type="number" id="num2" value=<%= value.toFixed(2) %> oninput="valreal()">
         <br>
       </div>
   </div>
   <script>
+    const value = document.getElementById('value').value
+    console.log(value)
+    function valdolar(){
+      var a = document.getElementById('num1')
+      var b = document.getElementById('num2')
+      b.value = (a.value / value).toFixed(2)
+    }
+
+    function valreal(){
+      var a = document.getElementById('num1')
+      var b = document.getElementById('num2')
+      a.value = (b.value * value).toFixed(2)
+    }
   </script>
 </body>
 </html>
