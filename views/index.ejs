@@ -9,13 +9,25 @@
 </head>
 <body>
   <input type="hidden" id="value" value=<%= value %> >
+ 
   <div class="container">
-      <div class="box">
-        <p>Reais</p>
-        <input type="number" id="num1" value="1" oninput="valdolar()">
-        <p>Dolar</p>
-        <input type="number" id="num2" value=<%= value.toFixed(2) %> oninput="valreal()">
+      <div class="descSite">
+        <h1>BRL/USD Conversor</h1>
+        <p>Converte from the brazilian 
+          currency to the american dollars right now!</p>
+        <p>Enter a value from 0 in any input camp and see the generated result.</p>
+      </div>
+      <div class="inputBox">
+        <p>REAL (BRL):</p>
+          <input type="number" id="num1" value="1" oninput="valdolar()">
+        <p>DOLAR (USD):</p>
+          <input type="number" id="num2" value=<%= value.toFixed(2) %> oninput="valreal()">
         <br>
+      </div>
+      <div class="credit">
+        <address>
+          Created by: Vitor and Bruno &copy; 2022 - Dolar Project
+        </address>
       </div>
   </div>
   <script>
